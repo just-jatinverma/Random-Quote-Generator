@@ -11,12 +11,17 @@ async function generateQuote() {
 
       document.querySelector("#quote").textContent = `${quote}`;
       document.querySelector("#author").textContent = `-${author}`;
+
+      const randomImageUrl = `https://picsum.photos/800/450?random=${Math.random()}`;
+      document.querySelector(
+        ".custom-container"
+      ).style.backgroundImage = `url(${randomImageUrl})`;
     } else {
       document.querySelector("#quote").textContent = `Failed to Fetch}`;
       document.querySelector("#author").textContent = ``;
     }
   } catch (error) {
-    document.querySelector("#quote").textContent = `Failed to Fetch}`;
+    document.querySelector("#quote").textContent = `Failed to Fetch`;
     document.querySelector("#author").textContent = ``;
   }
 }
@@ -43,6 +48,18 @@ function shareOnTwitter() {
     quote + " " + author
   )}`;
   window.open(tweetUrl, "_blank");
+}
+
+function exportToPng() {
+  const container = document.querySelector(".custom-container");
+  html2canvas(container).then((canvas) => {
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = "quote.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
 }
 
 window.onload = generateQuote;
