@@ -11,11 +11,6 @@ async function generateQuote() {
 
       document.querySelector("#quote").textContent = `${quote}`;
       document.querySelector("#author").textContent = `-${author}`;
-
-      const randomImageUrl = `https://picsum.photos/800/450?random=${Math.random()}`;
-      document.querySelector(
-        ".custom-container"
-      ).style.backgroundImage = `url("https://picsum.photos/800/450/?grayscale&blur=2")`;
     } else {
       document.querySelector("#quote").textContent = `Failed to Fetch}`;
       document.querySelector("#author").textContent = ``;
@@ -52,7 +47,14 @@ function shareOnTwitter() {
 
 function exportToPng() {
   const container = document.querySelector(".custom-container");
-  html2canvas(container).then((canvas) => {
+
+  html2canvas(container, {
+    useCORS: true,
+    backgroundColor: null, // Keeps transparency
+    logging: true, // Enable logs to debug issues
+    windowWidth: container.scrollWidth, // Ensure full width
+    windowHeight: container.scrollHeight, // Ensure full height
+  }).then((canvas) => {
     const link = document.createElement("a");
     link.href = canvas.toDataURL("image/png");
     link.download = "quote.png";
