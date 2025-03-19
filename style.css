@@ -1,0 +1,28 @@
+.displayContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.custom-container {
+  display: flex;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 75vw;
+  min-height: 60vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: url("https://picsum.photos/800/450/?grayscale&blur=2") no-repeat
+    center center;
+  background-size: cover;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
