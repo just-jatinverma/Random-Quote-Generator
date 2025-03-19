@@ -1,7 +1,3 @@
-Here’s an awesome `README.md` file for your project:
-
----
-
 # 🌟 Random Motivation Quotes
 
 A simple web application that generates random motivational quotes. You can copy, share, or export quotes as an image!
