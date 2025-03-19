@@ -15,7 +15,7 @@ async function generateQuote() {
       const randomImageUrl = `https://picsum.photos/800/450?random=${Math.random()}`;
       document.querySelector(
         ".custom-container"
-      ).style.backgroundImage = `url(${randomImageUrl})`;
+      ).style.backgroundImage = `url("https://picsum.photos/800/450/?grayscale&blur=2")`;
     } else {
       document.querySelector("#quote").textContent = `Failed to Fetch}`;
       document.querySelector("#author").textContent = ``;
