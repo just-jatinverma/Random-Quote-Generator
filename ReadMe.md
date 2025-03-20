@@ -40,11 +40,11 @@ To run the project locally:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/random-motivation-quotes.git
+   git clone https://github.com/just-jatinverma/Random-Quote-Generator.git
    ```
 2. Navigate to the project folder:
    ```sh
-   cd random-motivation-quotes
+   cd Random-Quote-Generator
    ```
 3. Open `index.html` in a browser.
 
